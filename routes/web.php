@@ -20,7 +20,7 @@ use App\Http\Controllers\SubjectListController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/login');
 });
 
 Route::get('register', [AuthController::class, 'registerForm'])->name('registerForm');
