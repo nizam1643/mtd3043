@@ -31,7 +31,6 @@ Route::post('send-link', [AuthController::class, 'sendLink'])->name('sendLink');
 Route::get('login-verify', [AuthController::class, 'login'])->name('loginVerify');
 Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 
-Route::get('/list/{id}/virtual', [SubjectListController::class, 'virtual'])->name('note.virtual');
 
 //USER
 Route::group(['middleware' => 'auth'], function () {
@@ -52,7 +51,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::group(['prefix' => 'Subject', 'as' => 'subject.'], function () {
         Route::get('/list/{id}', [SubjectListController::class, 'show'])->name('note.show');
-
+        Route::post('/list/{id}/virtual', [SubjectListController::class, 'virtual'])->name('note.virtual');
         Route::post('/list/store', [SubjectListController::class, 'store'])->name('note.store');
         Route::post('/list/{id}/edit', [SubjectListController::class, 'edit'])->name('note.edit');
         Route::delete('/list/{id}/destroy', [SubjectListController::class, 'destroy'])->name('note.destroy');
