@@ -45,7 +45,7 @@ CREATE
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlSelect2">Group</label>
-                        <select class="form-control" name="year_id" id="exampleFormControlSelect2" wire:model="year_id">
+                        <select class="form-control" name="group_id" id="exampleFormControlSelect2" wire:model="group_id">
                             @foreach ($group as $itemgroup)
                                 <option value="{{ $itemgroup->id }}">{{ $itemgroup->group }}</option>
                             @endforeach
