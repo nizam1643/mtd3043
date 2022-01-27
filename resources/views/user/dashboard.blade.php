@@ -24,7 +24,7 @@
                 </div>
                 <div class="col-lg-8">
                     <div class="container-fluid">
-                        @if (Auth::user()->id == 1)
+                        @if (Auth::user()->system_level == 1)
                             <div class="row">
                                     @forelse ($admins as $value1)
                                         <div class="col-lg-6">
