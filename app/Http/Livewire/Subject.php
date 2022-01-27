@@ -91,25 +91,13 @@ class Subject extends Component
     public function update()
     {
 
-        if ($this->subject_id && $this->thumbnail == NULL) {
+        if ($this->subject_id) {
             $subject = M3Subject::find($this->subject_id);
             $subject->update([
                 'subject' => $this->subject,
                 'subject_code' => $this->subject_code,
                 'desc' => $this->desc,
                 'thumbnail' => $this->thumbnail->store('documents','public'),
-                'year_id' => $this->year_id,
-                'group_id' => $this->group_id,
-            ]);
-            $this->updateMode = false;
-            session()->flash('message', 'Updated Successfully.');
-            $this->resetInputFields();
-        }else {
-            $subject = M3Subject::find($this->subject_id);
-            $subject->update([
-                'subject' => $this->subject,
-                'subject_code' => $this->subject_code,
-                'desc' => $this->desc,
                 'year_id' => $this->year_id,
                 'group_id' => $this->group_id,
             ]);

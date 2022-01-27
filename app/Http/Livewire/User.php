@@ -26,7 +26,7 @@ class User extends Component
 
         $searchTerm = '%'.$this->searchTerm.'%';
         return view('livewire.user.user',[
-            'users' => ModelsUser::where('name','like', $searchTerm)->paginate(5)
+            'users' => ModelsUser::where('name','like', $searchTerm)->paginate(50)
         ]);
     }
 
